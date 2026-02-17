@@ -51,12 +51,19 @@ Before launching the server, you must enable the microphone and set the gain lev
 
     sudo alsactl store
 
-1- Type your orangepipc-ip-address:5001   (ex: 192.168.1.123:5001) within the browser of an equipment into your local network
+🚀 How to use
 
-2- click on the play button 
+    Clone the repository:
+    Bash
 
-3- you hear what the mic gets with a few seconds of delay
+    git clone https://github.com/pierrebak/Orange-PI-embedded-microphone-to-webserver.git
+    cd Orange-PI-embedded-microphone-to-webserver
 
-Note: if larsen, decrease gain with the following command line:
+    Run the server:
+    Bash
 
-amixer sset 'Mic1' 50%
+    python3 app.py
+
+    Access the interface:
+    Open your browser and type your Orange Pi IP address on port 5001:
+    http://192.168.1.xxx:5001
