@@ -5,7 +5,7 @@
 
 2- click on the play button 
 
-3- you hear what the mic get with a few seconds of delay
+3- you hear what the mic gets with a few seconds of delay
 
 Note: if larsen, decrease gain with the following command line:
 
