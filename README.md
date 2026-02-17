@@ -1,3 +1,6 @@
+<img width="1901" height="960" alt="image" src="https://github.com/user-attachments/assets/a2ed9fdf-9cff-46f6-bb74-9c43cd231a3f" />
+
+
 # Orange Pi Embedded Microphone to Webserver
 
 A lightweight solution to stream or record audio from the onboard microphone of an Orange Pi PC (Allwinner H3) directly to a web browser.
