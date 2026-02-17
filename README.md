@@ -1,77 +1,59 @@
+# Orange Pi Embedded Microphone to Webserver
 
-<img width="1901" height="960" alt="image" src="https://github.com/user-attachments/assets/2f733fff-d368-426b-8a05-82dac1483ec6" />
+Welcome to the Orange Pi Embedded Microphone to Webserver project! 🎤🌐 This guide will walk you through the prerequisites, installation steps, hardware configuration, and usage instructions to get your system up and running.
 
+---
 
-To run this project, you need to install the audio management tools (ALSA), the multimedia encoder (FFmpeg), and the Python web framework (Flask).
-1. Update your system
+## Prerequisites
+Before you begin, ensure you have the following installed:
+- **Orange Pi** board (any model supported)
+- **Microphone** (embedded or external)
+- **Network connection** (Wi-Fi or Ethernet)
+- **Latest version of Raspbian** or your preferred OS on Orange Pi
 
-Ensure your package list is up to date to avoid "404 Not Found" errors during installation:
+## Installation
+Follow these steps for a successful installation:
+1. **Clone the repository:**  
+   Use the following command:
+   ```bash
+   git clone https://github.com/pierrebak/Orange-PI-embedded-microphone-to-webserver.git
+   ```
+2. **Navigate to the project directory:**  
+   ```bash
+   cd Orange-PI-embedded-microphone-to-webserver
+   ```
+3. **Install dependencies:**  
+   Ensure you run:
+   ```bash
+   sudo apt-get install <dependencies>
+   ```
+   *(Replace `<dependencies>` with required libraries.)*
 
-Bash
+## Hardware Configuration
+1. **Connect the microphone** to your Orange Pi:
+   - Pins: [Specify pin connections]
+   (Refer to the Orange Pi pinout diagram for clarity.)
 
-sudo apt update
+2. **Verify connection:**  
+   Use the command:
+   ```bash
+   aplay -l
+   ```
+   *(This will list all audio devices. Ensure your microphone appears.)*
 
-2. Install Audio and Streaming tools
+## Usage Instructions
+Once everything is set up, you can run the server by executing:
+```bash
+python3 server.py
+```
 
-These packages allow the Orange Pi to capture audio from the hardware and process it for the web:
+### Accessing the Web Interface
+Open your web browser and go to:
+```
+http://<Orange_Pi_IP>:<port>
+```
+*Replace `<Orange_Pi_IP>` with your device's IP address and `<port>` with the specified port in your `server.py`.*
 
-Bash
+---
 
-sudo apt install -y alsa-utils sox libsox-fmt-all ffmpeg
-
-    alsa-utils: Provides arecord and amixer to control the onboard microphone.
-
-    sox: A powerful audio manipulation tool used for recording tests.
-
-    ffmpeg: The engine used to stream the audio live to your browser.
-
-3. Install Web Server (Flask)
-
-We use Flask to create the web interface:
-
-Bash
-
-sudo apt install -y python3-flask
-
-🎤 Hardware Configuration
-
-Before launching the server, you must enable the microphone and set the gain level.
-
-    Join the audio group (if not already done):
-    
-    Bash
-
-    sudo usermod -aG audio $USER
-
-    Adjust the gain:
-    To avoid the Larsen effect (feedback) and background noise, set the microphone gain to 50% or 60%:
-    
-    Bash
-
-    amixer sset 'Mic1' 60%
-
-    Save settings:
-    To keep these settings after a reboot:
-    
-    Bash
-
-    sudo alsactl store
-
-🚀 How to use
-
-    Clone the repository:
-    
-    Bash
-
-    git clone https://github.com/pierrebak/Orange-PI-embedded-microphone-to-webserver.git
-    cd Orange-PI-embedded-microphone-to-webserver
-
-    Run the server:
-    
-    Bash
-
-    python3 app.py
-
-    Access the interface:
-    Open your browser and type your Orange Pi IP address on port 5001:
-    http://192.168.1.xxx:5001
+Enjoy your audio streaming experience! 🎉 If you encounter any issues, please refer to the troubleshooting section or contact the maintainers.
